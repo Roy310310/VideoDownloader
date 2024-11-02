@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{{ url_for('submit_video_link') }}" method="POST">
+        <label for='video_link'>Enter the link of the video:</label>
+        <input type='text' id='video_link' name='video_link' ><br><br>
+        <input type='submit' value='Submit'>
+</form>
+</body>
+</html>
