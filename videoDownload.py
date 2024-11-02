@@ -12,9 +12,13 @@ app = Flask(__name__)
 nlp = spacy.load("en_core_web_sm")
 
 
-@app.route('/favicon.ico')
-def favicon():
-    return Response('', status=200)
+@app.route('/', methods=['POST', 'GET'])
+def root_page():
+    if request.method == 'POST':
+        return redirect(url_for('get_link'))
+    elif request.method == 'GET':
+        return render_template('root_page.html')
+
 
 @app.route('/get_video_link',  methods=['POST', 'GET'])
 def get_link():
